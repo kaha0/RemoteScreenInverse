@@ -1,0 +1,10 @@
+send differential bitmaps!
+	-png with transparency, drawn over the old screen?
+	-some kind of bitblt pixeltransfer magic? TOSEND := CURRENT xor PREVIOUS ? takhle vytvoøená bitmapa TOSEND nebude sama o sobì dávat smysl, ale to je fuk
+		1) entirely GDI+ - slow, watch out how it uses memory
+		2) GDI+ & direct bitmap access - somewhat faster, ugly
+		3) GDI+ & Bitblt just for srcinvert - memory!, very ugly
+		4) entirely GDI, GDI+ just for encoding pngs - fast, efficient memory usage, ugly... not even that ugly really
+	always send differential OR compare sizes with full screen bitmap to see which is smaller?
+	can differential ever be much bigger than full snapshot? i don't think so and in most cases certainly not
+	differential pro quality 0 by se muselo dìlat jinak ! u black&white obrázku to stejnì ani nemá TAKOVEJ smysl...
